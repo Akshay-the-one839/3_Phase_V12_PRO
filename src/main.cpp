@@ -42,7 +42,7 @@ String statep,dryp,dryap,powonp;
 const String host = "http://newqbitronics.org.in";
 const char customhead[]= "<style>h1 {text-align:center;font-size:30px;}</style>";//<h1>New Qbitronics</h1>
 String rec;
-String level="";;
+String level="";
 int sflag=0;
      int flagf2=0;
 String state1;
