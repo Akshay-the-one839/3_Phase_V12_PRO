@@ -544,16 +544,16 @@ if (p != NULL) {
       Serial1.print('*');
         
       
-     Serial.print(phase);
-      Serial.print('*');
-       Serial.print(on_delay);
-      Serial.print('*');
-       Serial.print(off_delay);
-      Serial.print('*');
-        Serial.print(pw_ondly);
-      Serial.print('*');
-       Serial.print(dry_rst);
-      Serial.print('*');
+     Serial1.print(phase);
+      Serial1.print('*');
+       Serial1.print(on_delay);
+      Serial1.print('*');
+       Serial1.print(off_delay);
+      Serial1.print('*');
+        Serial1.print(pw_ondly);
+      Serial1.print('*');
+       Serial1.print(dry_rst);
+      Serial1.print('*');
     
      delay(1000); 
     statep=state;
@@ -754,7 +754,7 @@ void updatetoserver3() {
     http.end();
     delay(5000);
   } else {
-    Serial1.println("\nNot connected to Wi-Fi");
+    Serial.println("\nNot connected to Wi-Fi");
   }
 }
 
@@ -783,7 +783,7 @@ void updatetimer() {
     
     delay(5000);
   } else {
-    Serial1.println("\nNot connected to Wi-Fi");
+    Serial.println("\nNot connected to Wi-Fi");
   }
 }
 
@@ -863,7 +863,7 @@ drya11="0";
  state="0";
  drya11="0";
   
-  Serial1.println("k5"); 
+  Serial.println("k5"); 
 }
  
  updatetoserver1();
@@ -902,14 +902,14 @@ drya11="0";
  if(ta=="#")
  {
 setflag = 1;
-  Serial1.println("%"); 
+  Serial1.println("%");
  }
 
   if(ta=="^")
  {
 cy_time_flag = 1;
 setflag = 1;
-  Serial1.println("^"); 
+  Serial1.println("^");
  }
 }
 /*
@@ -992,8 +992,8 @@ Serial1.begin(9600, SERIAL_8N1, 44, 43);  // PIC
     strcpy(deviceID, custom_deviceID.getValue());
     strcpy(tokenID, custom_tokenID.getValue());
     saveParameters();
-    ssid=Serial1.println(WiFi.SSID());
-     pass= Serial1.println(WiFi.psk());
+    ssid = WiFi.SSID();
+    Serial1.println(ssid);
 
   }
 
